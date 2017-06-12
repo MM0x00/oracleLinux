@@ -1,11 +1,6 @@
-FROM ubuntu:14.04.2
+FROM scratch
+MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
+ADD oraclelinux-7-slim-rootfs.tar.xz /
 
-MAINTAINER support@shiyanlou.com
-
-RUN useradd -m trylab
-
-USER trylab
-
-WORKDIR /home/trylab
-
-CMD echo "shiyanlou trylab." | wc -
+# overwrite this with 'CMD []' in a dependent Dockerfile
+CMD ["/bin/bash"]
